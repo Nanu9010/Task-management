@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Signup</title>
+</head>
+<body>
+
+<form class="signup" method="POST">
+ <h1 class="title"> SignUp </h1>
+
+  <ul class="main">
+    {% csrf_token %}
+    {{ forms.as_p }}
+  </ul>
+
+  <ul> {% endfor %}</ul>
+  <a class="button" href="{% url 'view_students' %}">
+  <button type="submit"> submit </button>
+    </a>
+</form>
+
+</body>
+</html>

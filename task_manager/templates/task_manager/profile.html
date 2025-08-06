@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Profile</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+
+</head>
+<body>
+<h1>Profile</h1>
+
+<table>
+    <thead>
+        {% if profiles %}
+    <tr>
+        <th> id </th>
+        <th> name </th>
+        <th> mail </th>
+        <th> position </th>
+        <th> contact </th>
+        <th> address </th>
+
+    </tr>
+    </thead>
+    <tbody>
+    {% for pro in profiles %}
+    <tr>
+        <td>{{ pro.id }}</td>
+        <td>{{ pro.name }}</td>
+        <td>{{ pro.mail }}</td>
+        <td>{{ pro.position  }}</td>
+        <td>{{ pro.contact }}</td>
+        <td>{{ pro.address }}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+
+</table>
+{% else %}
+        <p style="color: red;">no data found</p>
+{% endif %}
+
+
+</body>
+</html>

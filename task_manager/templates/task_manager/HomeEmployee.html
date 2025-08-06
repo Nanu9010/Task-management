@@ -1,0 +1,148 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User</title>
+
+    <!-- ✅ Bootstrap 4.5 CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f9fa;
+        }
+
+        .navbar-brand {
+            font-weight: bold;
+        }
+
+        .nav-link:hover {
+            color: #007bff !important;
+        }
+
+        .search-input {
+            max-width: 200px;
+        }
+        .box-container {
+            background-color: white;
+            color: black;
+            padding: 60px;
+            margin: 50px auto;
+            text-align: center;
+            border-radius: 15px;
+            max-width: 80%;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .box-container h1 {
+            font-size: 150px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
+    <div class="container">
+        <a class="navbar-brand" href="{% url 'home' %}">SkyBrand</a>
+
+
+
+
+        <!-- Toggle button for mobile -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Navbar links -->
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'user' %}">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'login' %}">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'signup' %}">Sign Up</a>
+                </li>
+
+                <!-- Optional Dropdown -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                       data-toggle="dropdown">
+                        More
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">About Us</a>
+                        <a class="dropdown-item" href="#">Contact</a>
+                    </div>
+                </li>
+            </ul>
+
+            <!-- Search form -->
+            <form class="form-inline my-2 my-lg-0 ml-lg-3">
+                <input class="form-control mr-sm-2 search-input" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </div>
+    </div>
+</nav>
+
+<nav class="box-container">
+    <h1> Hello User </h1>
+</nav>
+
+
+<!-- Footer -->
+<footer class="bg-light text-center text-lg-start mt-5 shadow-sm">
+    <div class="container p-4">
+        <div class="row">
+            <!-- About section -->
+            <div class="col-lg-6 col-md-12 mb-4">
+                <h5 class="text-uppercase">SkyBrand</h5>
+                <p>
+                    Empowering users with an intuitive dashboard to manage tasks and access features seamlessly.
+                </p>
+            </div>
+
+            <!-- Links section -->
+            <div class="col-lg-3 col-md-6 mb-4">
+                <h5 class="text-uppercase">Quick Links</h5>
+                <ul class="list-unstyled mb-0">
+                    <li><a href="{% url 'user' %}" class="text-dark">Home</a></li>
+                    <li><a href="{% url 'login' %}" class="text-dark">Login</a></li>
+                    <li><a href="{% url 'signup' %}" class="text-dark">Sign Up</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact section -->
+            <div class="col-lg-3 col-md-6 mb-4">
+                <h5 class="text-uppercase">Contact</h5>
+                <ul class="list-unstyled">
+                    <li>Email: support@skybrand.com</li>
+                    <li>Phone: +91 98765 43210</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Copyright -->
+    <div class="text-center p-3 bg-dark text-white">
+        © 2025 SkyBrand. All rights reserved.
+    </div>
+</footer>
+
+
+
+
+
+<!-- Bootstrap JS (for dropdowns and collapse) -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

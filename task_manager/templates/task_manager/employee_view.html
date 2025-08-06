@@ -1,0 +1,104 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee View</title>
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        th, td {
+            padding: 12px;
+            border: 1px solid #ccc;
+            text-align: center;
+        }
+
+        th {
+            background-color: #007BFF;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        p {
+            text-align: center;
+            font-size: 18px;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+<header class="navbar">
+    <nav><a class="logo" href="{% url 'home' %}">Admin Page</a></nav>
+    <ul>
+        <li><a href="{% url 'home' %}">Home</a></li>
+        <li><a href="{% url 'login' %}">Login</a></li>
+        <li><a href="{% url 'signup' %}">SignUp</a></li>
+        <li><a href="{% url 'profile' %}">Profile</a></li>
+    </ul>
+</header>
+
+<div class="side-bar">
+    <ul>
+        <li><a href="{% url 'employee_add' %}">Add Employee</a></li>
+        <li><a href="{% url 'employee_view' %}">View Employee</a></li>
+        <li><a href="{% url 'task_add' %}">Add Task</a></li>
+        <li><a href="{% url 'task_view' %}">View Task</a></li>
+    </ul>
+</div>
+
+
+<h1>Employee View</h1>
+
+{% if employees %}
+<table>
+    <thead>
+    <tr>
+        <th>Username</th>
+        <th>Birthday</th>
+        <th>Gender</th>
+        <th>Contact</th>
+        <th>Address</th>
+        <th>Email</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for employee in employees %}
+    <tr>
+        <td>{{ employee.username }}</td>
+        <td>{{ employee.birthday }}</td>
+        <td>{{ employee.gender }}</td>
+        <td>{{ employee.contact }}</td>
+        <td>{{ employee.address }}</td>
+        <td>{{ employee.email }}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% else %}
+<p>No Data found...</p>
+{% endif %}
+
+</body>
+</html>

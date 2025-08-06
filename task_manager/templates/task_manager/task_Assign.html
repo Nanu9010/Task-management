@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Assign Task</title>
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+
+</head>
+<body>
+<header class="navbar">
+    <nav><a class="logo" href="{% url 'home' %}">Admin Page</a></nav>
+    <ul>
+        <li><a href="{% url 'home' %}">Home</a></li>
+        <li><a href="{% url 'login' %}">Login</a></li>
+        <li><a href="{% url 'signup' %}">SignUp</a></li>
+        <li><a href="{% url 'profile' %}">Profile</a></li>
+    </ul>
+</header>
+
+<div class="side-bar">
+    <ul>
+        <li><a href="{% url 'employee_add' %}">Add Employee</a></li>
+        <li><a href="{% url 'employee_view' %}">View Employee</a></li>
+        <li><a href="{% url 'task_add' %}">Add Task</a></li>
+        <li><a href="{% url 'task_view' %}">View Task</a></li>
+    </ul>
+</div>
+
+<h1>Assign Task</h1>
+
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Submit</button>
+</form>
+{% if error %}
+<p style="color: red;">error</p>
+{% endif %}
+</body>
+</html>
